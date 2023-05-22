@@ -13,7 +13,6 @@ runs:
     - run: go build -o ${{ inputs.entrypoint }}/main ${{ inputs.entrypoint }}
       shell: bash
       working-directory: ${{ inputs.working-directory }}
-    - run: ls -la
-      shell: bash
     - run: ${{ inputs.entrypoint }}/main
       shell: bash
+      working-directory: ${{ inputs.working-directory }}
