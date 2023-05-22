@@ -11,12 +11,13 @@ jobs:
     name: A job to say hello
     steps:
       - uses: actions/setup-go@v4
+      - run: mkdir /go
       - uses: actions/checkout@v3
         with:
           go-version: '^1.20.1'
-          path: /go/src
+          path: /go
       - run: go version
       - id: build
         uses: ./.github/actions/build
         with:
-          entrypoint: '/go/src/src/batch-a'
+          entrypoint: '/go/src/batch-a'
