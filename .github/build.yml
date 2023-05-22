@@ -1,0 +1,12 @@
+name: 'batch build'
+inputs:
+  entrypoint:
+    description: 'the entrypoint of target batch.'
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - run: go build -o ${{ inputs.entrypoint }}/main ${{ inputs.entrypoint }}
+      shell: bash
+    - run: ${{ inputs.entrypoint }}/main
+      shell: bash
