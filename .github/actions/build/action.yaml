@@ -1,4 +1,5 @@
 name: 'batch build'
+description: "batch build Composite Action"
 inputs:
   entrypoint:
     description: 'the entrypoint of target batch.'
