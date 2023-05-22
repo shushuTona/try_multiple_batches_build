@@ -1,5 +1,5 @@
 package gateway
 
 func GetName() string {
-	return "name-b"
+	return "name-b-change1"
 }
