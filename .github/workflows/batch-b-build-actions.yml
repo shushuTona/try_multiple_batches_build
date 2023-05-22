@@ -1,0 +1,22 @@
+name: 'batch-b-build'
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/batch-b/**'
+  workflow_dispatch:
+jobs:
+  batch_a_build:
+    runs-on: ubuntu-latest
+    name: A job to build go batch b
+    steps:
+      - uses: actions/setup-go@v4
+      - uses: actions/checkout@v3
+        with:
+          go-version: '^1.20.1'
+      - id: build
+        uses: ./.github/actions/build
+        with:
+          entrypoint: './batch-b'
+          working-directory: './src'
