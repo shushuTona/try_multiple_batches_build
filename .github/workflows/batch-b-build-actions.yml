@@ -5,6 +5,7 @@ on:
       - main
     paths:
       - 'src/batch-b/**'
+      - 'src/common/**'
   workflow_dispatch:
 jobs:
   batch_a_build:
