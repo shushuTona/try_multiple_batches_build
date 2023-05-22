@@ -4,10 +4,14 @@ inputs:
   entrypoint:
     description: 'the entrypoint of target batch.'
     required: true
+  working-directory:
+    description: 'working-directory.'
+    required: true
 runs:
   using: "composite"
   steps:
     - run: go build -o ${{ inputs.entrypoint }}/main ${{ inputs.entrypoint }}
       shell: bash
+      working-directory: ${{ inputs.working-directory }}
     - run: ${{ inputs.entrypoint }}/main
       shell: bash

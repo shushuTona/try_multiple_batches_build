@@ -20,4 +20,5 @@ jobs:
       - id: build
         uses: ./.github/actions/build
         with:
-          entrypoint: './src/batch-a'
+          entrypoint: './batch-a'
+          working-directory: './src'
